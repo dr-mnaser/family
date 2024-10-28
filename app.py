@@ -55,6 +55,44 @@ def calculate_age(birthdate):
     
     return years, months, days
 
+# Function to calculate age in years, months, and days, and time until next birthday
+def calculate_age_and_next_birthday(birthdate):
+    today = datetime.today()
+    
+    # Calculate age in years, months, and days
+    years = today.year - birthdate.year
+    months = today.month - birthdate.month
+    days = today.day - birthdate.day
+    
+    # Adjust for negative values in the days and months
+    if days < 0:
+        months -= 1
+        previous_month = (today.replace(day=1) - timedelta(days=1)).day
+        days += previous_month
+
+    if months < 0:
+        years -= 1
+        months += 12
+
+    # Calculate the next birthday
+    next_birthday = birthdate.replace(year=today.year)
+    if next_birthday < today:
+        next_birthday = next_birthday.replace(year=today.year + 1)
+    
+    # Calculate the time difference until the next birthday
+    months_until_birthday = next_birthday.month - today.month
+    days_until_birthday = next_birthday.day - today.day
+    
+    if days_until_birthday < 0:
+        months_until_birthday -= 1
+        previous_month_days = (next_birthday.replace(day=1) - timedelta(days=1)).day
+        days_until_birthday += previous_month_days
+
+    if months_until_birthday < 0:
+        months_until_birthday += 12
+
+    return (years, months, days), (months_until_birthday, days_until_birthday)
+
 # Define a function to check if the app can serve a new user based on the current resource usage
 def can_serve_user():
     cpu_percent, mem_percent = get_system_usage()
@@ -80,15 +118,57 @@ def main():
         birthdate4 = datetime(dates_all["jannah_year"], dates_all["jannah_month"], dates_all["jannah_day"])
         birthdate5 = datetime(dates_all["sarah_year"], dates_all["sarah_month"], dates_all["sarah_day"])
 
-        # Calculate age
-        age_years1, age_months1, age_days1 = calculate_age(birthdate1)
-        age_years2, age_months2, age_days2 = calculate_age(birthdate2)
-        age_years3, age_months3, age_days3 = calculate_age(birthdate3)
-        age_years4, age_months4, age_days4 = calculate_age(birthdate4)
-        age_years5, age_months5, age_days5 = calculate_age(birthdate5)
+        # Calculate age and get next birthday
+        # age_years1, age_months1, age_days1 = calculate_age(birthdate1)
+        # age_years2, age_months2, age_days2 = calculate_age(birthdate2)
+        # age_years3, age_months3, age_days3 = calculate_age(birthdate3)
+        # age_years4, age_months4, age_days4 = calculate_age(birthdate4)
+        # age_years5, age_months5, age_days5 = calculate_age(birthdate5)
+        (age_years1, age_months1, age_days1), (months_until_birthday1, days_until_birthday1) = calculate_age_and_next_birthday(birthdate1)
+        (age_years2, age_months2, age_days2), (months_until_birthday2, days_until_birthday2) = calculate_age_and_next_birthday(birthdate2)
+        (age_years3, age_months3, age_days3), (months_until_birthday3, days_until_birthday3) = calculate_age_and_next_birthday(birthdate3)
+        (age_years4, age_months4, age_days4), (months_until_birthday4, days_until_birthday4) = calculate_age_and_next_birthday(birthdate4)
+        (age_years5, age_months5, age_days5), (months_until_birthday5, days_until_birthday5) = calculate_age_and_next_birthday(birthdate5)
+        
+        if (age_months1 == 0) and (age_days1 == 0):
+            #st.header("كل سنة وإنت طيب يا محمد")
+            # Birthday header with emojis
+            st.markdown("<h1 style='text-align: center;'>🎉🎂 كل سنة وإنت طيب يا محمد 🎂🎉</h1>", unsafe_allow_html=True)
+            # Add an extra line with more balloons or cake emojis below
+            st.markdown("<h2 style='text-align: center;'>🎈🎈🎈🎈🎈🎈</h2>", unsafe_allow_html=True)
+
+        if (age_months2 == 0) and (age_days2 == 0):
+            #st.header("كل سنة وإنتي طيبة يا شيماء")
+            st.markdown("<h1 style='text-align: center;'>🎉🎂 كل سنة وإنتي طيبة يا شيماء 🎂🎉</h1>", unsafe_allow_html=True)
+            # Add an extra line with more balloons or cake emojis below
+            st.markdown("<h2 style='text-align: center;'>🎈🎈🎈🎈🎈🎈</h2>", unsafe_allow_html=True)
+        if (age_months3 == 0) and (age_days3 == 0):
+            #st.header("كل سنة وإنتي طيبة يا مريم")
+            st.markdown("<h1 style='text-align: center;'>🎉🎂 كل سنة وإنتي طيبة يا مريم 🎂🎉</h1>", unsafe_allow_html=True)
+            # Add an extra line with more balloons or cake emojis below
+            st.markdown("<h2 style='text-align: center;'>🎈🎈🎈🎈🎈🎈</h2>", unsafe_allow_html=True)
+        if (age_months4 == 0) and (age_days4 == 0):
+            #st.header("كل سنة وإنتي طيبة يا جنة")
+            st.markdown("<h1 style='text-align: center;'>🎉🎂 كل سنة وإنتي طيبة يا جنة 🎂🎉</h1>", unsafe_allow_html=True)
+            # Add an extra line with more balloons or cake emojis below
+            st.markdown("<h2 style='text-align: center;'>🎈🎈🎈🎈🎈🎈</h2>", unsafe_allow_html=True)
+        if (age_months5 == 0) and (age_days5 == 0):
+            #st.header("كل سنة وإنتي طيبة يا سارة")
+            st.markdown("<h1 style='text-align: center;'>🎉🎂 كل سنة وإنتي طيبة يا سارة 🎂🎉</h1>", unsafe_allow_html=True)
+            # Add an extra line with more balloons or cake emojis below
+            st.markdown("<h2 style='text-align: center;'>🎈🎈🎈🎈🎈🎈</h2>", unsafe_allow_html=True)
+       
+        st.text("Mohamed Naser's Family Time Unitl Birthdays:")
+        data0 = [{'Name': "Mohamed Naser",'Months':months_until_birthday1, 'Days':days_until_birthday1},
+                {'Name': "Shimaa Abdelsalam",'Months':months_until_birthday2, 'Days':days_until_birthday2},
+                {'Name': "Maryam Naser",'Months':months_until_birthday3, 'Days':days_until_birthday3},
+                {'Name': "Jannah Naser",'Months':months_until_birthday4, 'Days':days_until_birthday4},
+                {'Name': "Sarah Naser",'Months':months_until_birthday5, 'Days':days_until_birthday5},
+                ]
+        df0 = pd.DataFrame.from_dict(data0)
+        st.write(df0)
         
         st.text("Mohamed Naser's Family Ages:")
-
         data = [{'Name': "Mohamed Naser",'Years':age_years1, 'Months':age_months1, 'Days':age_days1},
                 {'Name': "Shimaa Abdelsalam",'Years':age_years2, 'Months':age_months2, 'Days':age_days2},
                 {'Name': "Maryam Naser",'Years':age_years3, 'Months':age_months3, 'Days':age_days3},
@@ -97,14 +177,5 @@ def main():
                 ]
         df = pd.DataFrame.from_dict(data)
         st.write(df)
-
-
-        # col4, col6, col7 = st.columns(3)
-        
-        # # Display the metrics
-        # col4.metric("Years:", f"{age_years}")
-        # col6.metric("Months:", f"{age_months}")
-        # col7.metric("Days:", f"{age_days}")
-
     
 main()
