@@ -136,28 +136,33 @@ def main():
             st.markdown("<h1 style='text-align: center;'>🎉🎂 كل سنة وإنت طيب يا محمد 🎂🎉</h1>", unsafe_allow_html=True)
             # Add an extra line with more balloons or cake emojis below
             st.markdown("<h2 style='text-align: center;'>🎈🎈🎈🎈🎈🎈</h2>", unsafe_allow_html=True)
-
+            st.markdown(f"<h2 style='text-align: center; color: #ff6347;'>🎂 You Are Now {age_years1} Years Old 🎂</h2>", unsafe_allow_html=True)
         if (age_months2 == 0) and (age_days2 == 0):
             #st.header("كل سنة وإنتي طيبة يا شيماء")
             st.markdown("<h1 style='text-align: center;'>🎉🎂 كل سنة وإنتي طيبة يا شيماء 🎂🎉</h1>", unsafe_allow_html=True)
             # Add an extra line with more balloons or cake emojis below
             st.markdown("<h2 style='text-align: center;'>🎈🎈🎈🎈🎈🎈</h2>", unsafe_allow_html=True)
+            st.markdown(f"<h2 style='text-align: center; color: #ff6347;'>🎂 You Are Now {age_years2} Years Old 🎂</h2>", unsafe_allow_html=True)
         if (age_months3 == 0) and (age_days3 == 0):
             #st.header("كل سنة وإنتي طيبة يا مريم")
             st.markdown("<h1 style='text-align: center;'>🎉🎂 كل سنة وإنتي طيبة يا مريم 🎂🎉</h1>", unsafe_allow_html=True)
             # Add an extra line with more balloons or cake emojis below
             st.markdown("<h2 style='text-align: center;'>🎈🎈🎈🎈🎈🎈</h2>", unsafe_allow_html=True)
+            st.markdown(f"<h2 style='text-align: center; color: #ff6347;'>🎂 You Are Now {age_years3} Years Old 🎂</h2>", unsafe_allow_html=True)
         if (age_months4 == 0) and (age_days4 == 0):
             #st.header("كل سنة وإنتي طيبة يا جنة")
             st.markdown("<h1 style='text-align: center;'>🎉🎂 كل سنة وإنتي طيبة يا جنة 🎂🎉</h1>", unsafe_allow_html=True)
             # Add an extra line with more balloons or cake emojis below
             st.markdown("<h2 style='text-align: center;'>🎈🎈🎈🎈🎈🎈</h2>", unsafe_allow_html=True)
+            st.markdown(f"<h2 style='text-align: center; color: #ff6347;'>🎂 You Are Now {age_years4} Years Old 🎂</h2>", unsafe_allow_html=True)
         if (age_months5 == 0) and (age_days5 == 0):
             #st.header("كل سنة وإنتي طيبة يا سارة")
             st.markdown("<h1 style='text-align: center;'>🎉🎂 كل سنة وإنتي طيبة يا سارة 🎂🎉</h1>", unsafe_allow_html=True)
             # Add an extra line with more balloons or cake emojis below
             st.markdown("<h2 style='text-align: center;'>🎈🎈🎈🎈🎈🎈</h2>", unsafe_allow_html=True)
-       
+            st.markdown(f"<h2 style='text-align: center; color: #ff6347;'>🎂 You Are Now {age_years5} Years Old 🎂</h2>", unsafe_allow_html=True)
+
+
         st.text("Mohamed Naser's Family Time Unitl Birthdays:")
         data0 = [{'Name': "Mohamed Naser",'Months':months_until_birthday1, 'Days':days_until_birthday1},
                 {'Name': "Shimaa Abdelsalam",'Months':months_until_birthday2, 'Days':days_until_birthday2},
