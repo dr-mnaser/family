@@ -119,49 +119,131 @@ def main():
         birthdate5 = datetime(dates_all["sarah_year"], dates_all["sarah_month"], dates_all["sarah_day"])
 
         # Calculate age and get next birthday
-        # age_years1, age_months1, age_days1 = calculate_age(birthdate1)
-        # age_years2, age_months2, age_days2 = calculate_age(birthdate2)
-        # age_years3, age_months3, age_days3 = calculate_age(birthdate3)
-        # age_years4, age_months4, age_days4 = calculate_age(birthdate4)
-        # age_years5, age_months5, age_days5 = calculate_age(birthdate5)
         (age_years1, age_months1, age_days1), (months_until_birthday1, days_until_birthday1) = calculate_age_and_next_birthday(birthdate1)
         (age_years2, age_months2, age_days2), (months_until_birthday2, days_until_birthday2) = calculate_age_and_next_birthday(birthdate2)
         (age_years3, age_months3, age_days3), (months_until_birthday3, days_until_birthday3) = calculate_age_and_next_birthday(birthdate3)
         (age_years4, age_months4, age_days4), (months_until_birthday4, days_until_birthday4) = calculate_age_and_next_birthday(birthdate4)
         (age_years5, age_months5, age_days5), (months_until_birthday5, days_until_birthday5) = calculate_age_and_next_birthday(birthdate5)
         
+        # if (age_months1 == 0) and (age_days1 == 0): 
+        #     # Birthday header with emojis
+        #     st.markdown("<h1 style='text-align: center;'>🎉🎂 كل سنة وإنت طيب يا محمد 🎂🎉</h1>", unsafe_allow_html=True)
+        #     st.markdown("<h2 style='text-align: center;'>🎈🎈🎈🎈🎈🎈</h2>", unsafe_allow_html=True)
+        #     st.markdown(f"<h2 style='text-align: center; color: #ff6347;'>🎂 You Are Now {age_years1} Years Old 🎂</h2>", unsafe_allow_html=True)
+        # if (age_months2 == 0) and (age_days2 == 0):
+        #     #st.header("كل سنة وإنتي طيبة يا شيماء")
+        #     st.markdown("<h1 style='text-align: center;'>🎉🎂 كل سنة وإنتي طيبة يا شيماء 🎂🎉</h1>", unsafe_allow_html=True)
+        #     st.markdown("<h2 style='text-align: center;'>🎈🎈🎈🎈🎈🎈</h2>", unsafe_allow_html=True)
+        #     st.markdown(f"<h2 style='text-align: center; color: #ff6347;'>🎂 You Are Now {age_years2} Years Old 🎂</h2>", unsafe_allow_html=True)
+        # if (age_months3 == 0) and (age_days3 == 0):
+        #     #st.header("كل سنة وإنتي طيبة يا مريم")
+        #     st.markdown("<h1 style='text-align: center;'>🎉🎂 كل سنة وإنتي طيبة يا مريم 🎂🎉</h1>", unsafe_allow_html=True)
+        #     st.markdown("<h2 style='text-align: center;'>🎈🎈🎈🎈🎈🎈</h2>", unsafe_allow_html=True)
+        #     st.markdown(f"<h2 style='text-align: center; color: #ff6347;'>🎂 You Are Now {age_years3} Years Old 🎂</h2>", unsafe_allow_html=True)
+        # if (age_months4 == 0) and (age_days4 == 0):
+        #     #st.header("كل سنة وإنتي طيبة يا جنة")
+        #     st.markdown("<h1 style='text-align: center;'>🎉🎂 كل سنة وإنتي طيبة يا جنة 🎂🎉</h1>", unsafe_allow_html=True)
+        #     st.markdown("<h2 style='text-align: center;'>🎈🎈🎈🎈🎈🎈</h2>", unsafe_allow_html=True)
+        #     st.markdown(f"<h2 style='text-align: center; color: #ff6347;'>🎂 You Are Now {age_years4} Years Old 🎂</h2>", unsafe_allow_html=True)
+        # if (age_months5 == 0) and (age_days5 == 0):
+        #     #st.header("كل سنة وإنتي طيبة يا سارة")
+        #     st.markdown("<h1 style='text-align: center;'>🎉🎂 كل سنة وإنتي طيبة يا سارة 🎂🎉</h1>", unsafe_allow_html=True)
+        #     st.markdown("<h2 style='text-align: center;'>🎈🎈🎈🎈🎈🎈</h2>", unsafe_allow_html=True)
+        #     st.markdown(f"<h2 style='text-align: center; color: #ff6347;'>🎂 You Are Now {age_years5} Years Old 🎂</h2>", unsafe_allow_html=True)
+
+        
+        # Birthday celebrations and checks for each individual
         if (age_months1 == 0) and (age_days1 == 0):
-            #st.header("كل سنة وإنت طيب يا محمد")
-            # Birthday header with emojis
+            # Exact birthday for محمد
             st.markdown("<h1 style='text-align: center;'>🎉🎂 كل سنة وإنت طيب يا محمد 🎂🎉</h1>", unsafe_allow_html=True)
-            # Add an extra line with more balloons or cake emojis below
             st.markdown("<h2 style='text-align: center;'>🎈🎈🎈🎈🎈🎈</h2>", unsafe_allow_html=True)
             st.markdown(f"<h2 style='text-align: center; color: #ff6347;'>🎂 You Are Now {age_years1} Years Old 🎂</h2>", unsafe_allow_html=True)
+
+        elif (age_months1 == 0) and (age_days1 <= 3):
+            # Recent birthday within the last 4 days
+            st.markdown("<h1 style='text-align: center;'>🎉🎂 كل سنة وإنت طيب يا محمد 🎂🎉</h1>", unsafe_allow_html=True)
+            st.markdown("<h2 style='text-align: center;'>🎈🎈🎈🎈🎈🎈</h2>", unsafe_allow_html=True)
+            st.markdown(f"<h2 style='text-align: center; color: #ff6347;'>🎂 Your Age Now is {age_years1} Years and {age_days1} Days 🎂</h2>", unsafe_allow_html=True)
+
+        elif (age_months1 == 11) and (age_days1 >= 28):
+            # Upcoming birthday within the month
+            st.markdown("<h1 style='text-align: center;'>🎉🎂 كل سنة وإنت طيب يا محمد 🎂🎉</h1>", unsafe_allow_html=True)
+            st.markdown("<h2 style='text-align: center;'>🎈🎈🎈🎈🎈🎈</h2>", unsafe_allow_html=True)
+            st.markdown(f"<h2 style='text-align: center; color: #ff6347;'>🎂 You Will Be {age_years1 + 1} in {days_until_birthday1} Days 🎂</h2>", unsafe_allow_html=True)
+
+        # Same birthday celebration structure for other individuals
+
         if (age_months2 == 0) and (age_days2 == 0):
-            #st.header("كل سنة وإنتي طيبة يا شيماء")
+            # Exact birthday for شيماء
             st.markdown("<h1 style='text-align: center;'>🎉🎂 كل سنة وإنتي طيبة يا شيماء 🎂🎉</h1>", unsafe_allow_html=True)
-            # Add an extra line with more balloons or cake emojis below
             st.markdown("<h2 style='text-align: center;'>🎈🎈🎈🎈🎈🎈</h2>", unsafe_allow_html=True)
             st.markdown(f"<h2 style='text-align: center; color: #ff6347;'>🎂 You Are Now {age_years2} Years Old 🎂</h2>", unsafe_allow_html=True)
+
+        elif (age_months2 == 0) and (age_days2 <= 3):
+            # Recent birthday within the last 4 days
+            st.markdown("<h1 style='text-align: center;'>🎉🎂 كل سنة وإنتي طيبة يا شيماء 🎂🎉</h1>", unsafe_allow_html=True)
+            st.markdown("<h2 style='text-align: center;'>🎈🎈🎈🎈🎈🎈</h2>", unsafe_allow_html=True)
+            st.markdown(f"<h2 style='text-align: center; color: #ff6347;'>🎂 Your Age Now is {age_years2} Years and {age_days2} Days 🎂</h2>", unsafe_allow_html=True)
+
+        elif (age_months2 == 11) and (age_days2 >= 28):
+            # Upcoming birthday within the month
+            st.markdown("<h1 style='text-align: center;'>🎉🎂 كل سنة وإنتي طيبة يا شيماء 🎂🎉</h1>", unsafe_allow_html=True)
+            st.markdown("<h2 style='text-align: center;'>🎈🎈🎈🎈🎈🎈</h2>", unsafe_allow_html=True)
+            st.markdown(f"<h2 style='text-align: center; color: #ff6347;'>🎂 You Will Be {age_years2 + 1} in {days_until_birthday2} Days 🎂</h2>", unsafe_allow_html=True)
+
         if (age_months3 == 0) and (age_days3 == 0):
-            #st.header("كل سنة وإنتي طيبة يا مريم")
+            # Exact birthday for مريم
             st.markdown("<h1 style='text-align: center;'>🎉🎂 كل سنة وإنتي طيبة يا مريم 🎂🎉</h1>", unsafe_allow_html=True)
-            # Add an extra line with more balloons or cake emojis below
             st.markdown("<h2 style='text-align: center;'>🎈🎈🎈🎈🎈🎈</h2>", unsafe_allow_html=True)
             st.markdown(f"<h2 style='text-align: center; color: #ff6347;'>🎂 You Are Now {age_years3} Years Old 🎂</h2>", unsafe_allow_html=True)
+
+        elif (age_months3 == 0) and (age_days3 <= 3):
+            # Recent birthday within the last 4 days
+            st.markdown("<h1 style='text-align: center;'>🎉🎂 كل سنة وإنتي طيبة يا مريم 🎂🎉</h1>", unsafe_allow_html=True)
+            st.markdown("<h2 style='text-align: center;'>🎈🎈🎈🎈🎈🎈</h2>", unsafe_allow_html=True)
+            st.markdown(f"<h2 style='text-align: center; color: #ff6347;'>🎂 Your Age Now is {age_years3} Years and {age_days3} Days 🎂</h2>", unsafe_allow_html=True)
+
+        elif (age_months3 == 11) and (age_days3 >= 28):
+            # Upcoming birthday within the month
+            st.markdown("<h1 style='text-align: center;'>🎉🎂 كل سنة وإنتي طيبة يا مريم 🎂🎉</h1>", unsafe_allow_html=True)
+            st.markdown("<h2 style='text-align: center;'>🎈🎈🎈🎈🎈🎈</h2>", unsafe_allow_html=True)
+            st.markdown(f"<h2 style='text-align: center; color: #ff6347;'>🎂 You Will Be {age_years3 + 1} in {days_until_birthday3} Days 🎂</h2>", unsafe_allow_html=True)
+
         if (age_months4 == 0) and (age_days4 == 0):
-            #st.header("كل سنة وإنتي طيبة يا جنة")
+            # Exact birthday for جنة
             st.markdown("<h1 style='text-align: center;'>🎉🎂 كل سنة وإنتي طيبة يا جنة 🎂🎉</h1>", unsafe_allow_html=True)
-            # Add an extra line with more balloons or cake emojis below
             st.markdown("<h2 style='text-align: center;'>🎈🎈🎈🎈🎈🎈</h2>", unsafe_allow_html=True)
             st.markdown(f"<h2 style='text-align: center; color: #ff6347;'>🎂 You Are Now {age_years4} Years Old 🎂</h2>", unsafe_allow_html=True)
+
+        elif (age_months4 == 0) and (age_days4 <= 3):
+            # Recent birthday within the last 4 days
+            st.markdown("<h1 style='text-align: center;'>🎉🎂 كل سنة وإنتي طيبة يا جنة 🎂🎉</h1>", unsafe_allow_html=True)
+            st.markdown("<h2 style='text-align: center;'>🎈🎈🎈🎈🎈🎈</h2>", unsafe_allow_html=True)
+            st.markdown(f"<h2 style='text-align: center; color: #ff6347;'>🎂 Your Age Now is {age_years4} Years and {age_days4} Days 🎂</h2>", unsafe_allow_html=True)
+
+        elif (age_months4 == 11) and (age_days4 >= 28):
+            # Upcoming birthday within the month
+            st.markdown("<h1 style='text-align: center;'>🎉🎂 كل سنة وإنتي طيبة يا جنة 🎂🎉</h1>", unsafe_allow_html=True)
+            st.markdown("<h2 style='text-align: center;'>🎈🎈🎈🎈🎈🎈</h2>", unsafe_allow_html=True)
+            st.markdown(f"<h2 style='text-align: center; color: #ff6347;'>🎂 You Will Be {age_years4 + 1} in {days_until_birthday4} Days 🎂</h2>", unsafe_allow_html=True)
+
         if (age_months5 == 0) and (age_days5 == 0):
-            #st.header("كل سنة وإنتي طيبة يا سارة")
+            # Exact birthday for سارة
             st.markdown("<h1 style='text-align: center;'>🎉🎂 كل سنة وإنتي طيبة يا سارة 🎂🎉</h1>", unsafe_allow_html=True)
-            # Add an extra line with more balloons or cake emojis below
             st.markdown("<h2 style='text-align: center;'>🎈🎈🎈🎈🎈🎈</h2>", unsafe_allow_html=True)
             st.markdown(f"<h2 style='text-align: center; color: #ff6347;'>🎂 You Are Now {age_years5} Years Old 🎂</h2>", unsafe_allow_html=True)
 
+        elif (age_months5 == 0) and (age_days5 <= 3):
+            # Recent birthday within the last 4 days
+            st.markdown("<h1 style='text-align: center;'>🎉🎂 كل سنة وإنتي طيبة يا سارة 🎂🎉</h1>", unsafe_allow_html=True)
+            st.markdown("<h2 style='text-align: center;'>🎈🎈🎈🎈🎈🎈</h2>", unsafe_allow_html=True)
+            st.markdown(f"<h2 style='text-align: center; color: #ff6347;'>🎂 Your Age Now is {age_years5} Years and {age_days5} Days 🎂</h2>", unsafe_allow_html=True)
+
+        elif (age_months5 == 11) and (age_days5 >= 28):
+            # Upcoming birthday within the month
+            st.markdown("<h1 style='text-align: center;'>🎉🎂 كل سنة وإنتي طيبة يا سارة 🎂🎉</h1>", unsafe_allow_html=True)
+            st.markdown("<h2 style='text-align: center;'>🎈🎈🎈🎈🎈🎈</h2>", unsafe_allow_html=True)
+            st.markdown(f"<h2 style='text-align: center; color: #ff6347;'>🎂 You Will Be {age_years5 + 1} in {days_until_birthday5} Days 🎂</h2>", unsafe_allow_html=True)
 
         st.text("Mohamed Naser's Family Time Unitl Birthdays:")
         data0 = [{'Name': "Mohamed Naser",'Months':months_until_birthday1, 'Days':days_until_birthday1},
