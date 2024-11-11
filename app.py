@@ -254,7 +254,8 @@ def main():
                 ]
         df0 = pd.DataFrame.from_dict(data0)
         #df0.index = range(1, len(df0) + 1)  # Set index to start from 1
-        df0.index = [1, 2, 3, 4, 5]
+        #df0.index = [1, 2, 3, 4, 5]
+        df0.set_index("Name", inplace=True)
         st.write(df0)
         
         st.text("Mohamed Naser's Family Ages:")
@@ -266,7 +267,8 @@ def main():
                 ]
         df = pd.DataFrame.from_dict(data)
         #df.index = range(1, len(df) + 1)  # Set index to start from 1
-        df.index = [1, 2, 3, 4, 5]
+        #df.index = [1, 2, 3, 4, 5]
+        df.set_index("Name", inplace=True)
         st.write(df)
     
 main()
