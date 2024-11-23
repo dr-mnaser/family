@@ -245,7 +245,7 @@ def main():
             st.markdown("<h2 style='text-align: center;'>🎈🎈🎈🎈🎈🎈</h2>", unsafe_allow_html=True)
             st.markdown(f"<h2 style='text-align: center; color: #ff6347;'>🎂 You Will Be {age_years5 + 1} in {days_until_birthday5} Days 🎂</h2>", unsafe_allow_html=True)
 
-        st.text("Mohamed Naser's Family Time Unitl Birthdays:")
+        st.text("Time Unitl Birthdays:")
         data0 = [{'Name': "Mohamed Naser",'Months':months_until_birthday1, 'Days':days_until_birthday1},
                 {'Name': "Shimaa Abdelsalam",'Months':months_until_birthday2, 'Days':days_until_birthday2},
                 {'Name': "Maryam Naser",'Months':months_until_birthday3, 'Days':days_until_birthday3},
@@ -258,7 +258,7 @@ def main():
         df0.set_index("Name", inplace=True)
         st.write(df0)
         
-        st.text("Mohamed Naser's Family Ages:")
+        st.text("Ages:")
         data = [{'Name': "Mohamed Naser",'Years':age_years1, 'Months':age_months1, 'Days':age_days1},
                 {'Name': "Shimaa Abdelsalam",'Years':age_years2, 'Months':age_months2, 'Days':age_days2},
                 {'Name': "Maryam Naser",'Years':age_years3, 'Months':age_months3, 'Days':age_days3},
