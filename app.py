@@ -9,7 +9,7 @@ import json
 
 
 # -------------- SETTINGS --------------
-page_title = "Mohamed Naser's Family"
+page_title = "Mohamed's Family"
 page_icon = ":family:"  # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
 layout = "centered"
 # --------------------------------------
@@ -246,11 +246,11 @@ def main():
             st.markdown(f"<h2 style='text-align: center; color: #ff6347;'>🎂 You Will Be {age_years5 + 1} in {days_until_birthday5} Days 🎂</h2>", unsafe_allow_html=True)
 
         st.text("Time Unitl Birthdays:")
-        data0 = [{'Name': "Mohamed Naser",'Months':months_until_birthday1, 'Days':days_until_birthday1},
-                {'Name': "Shimaa Abdelsalam",'Months':months_until_birthday2, 'Days':days_until_birthday2},
-                {'Name': "Maryam Naser",'Months':months_until_birthday3, 'Days':days_until_birthday3},
-                {'Name': "Jannah Naser",'Months':months_until_birthday4, 'Days':days_until_birthday4},
-                {'Name': "Sarah Naser",'Months':months_until_birthday5, 'Days':days_until_birthday5},
+        data0 = [{'Name': "Mohamed",'Months':months_until_birthday1, 'Days':days_until_birthday1},
+                {'Name': "Shimaa",'Months':months_until_birthday2, 'Days':days_until_birthday2},
+                {'Name': "Maryam",'Months':months_until_birthday3, 'Days':days_until_birthday3},
+                {'Name': "Jannah",'Months':months_until_birthday4, 'Days':days_until_birthday4},
+                {'Name': "Sarah",'Months':months_until_birthday5, 'Days':days_until_birthday5},
                 ]
         df0 = pd.DataFrame.from_dict(data0)
         #df0.index = range(1, len(df0) + 1)  # Set index to start from 1
@@ -259,11 +259,11 @@ def main():
         st.write(df0)
         
         st.text("Ages:")
-        data = [{'Name': "Mohamed Naser",'Years':age_years1, 'Months':age_months1, 'Days':age_days1},
-                {'Name': "Shimaa Abdelsalam",'Years':age_years2, 'Months':age_months2, 'Days':age_days2},
-                {'Name': "Maryam Naser",'Years':age_years3, 'Months':age_months3, 'Days':age_days3},
-                {'Name': "Jannah Naser",'Years':age_years4, 'Months':age_months4, 'Days':age_days4},
-                {'Name': "Sarah Naser",'Years':age_years5, 'Months':age_months5, 'Days':age_days5},
+        data = [{'Name': "Mohamed",'Years':age_years1, 'Months':age_months1, 'Days':age_days1},
+                {'Name': "Shimaa",'Years':age_years2, 'Months':age_months2, 'Days':age_days2},
+                {'Name': "Maryam",'Years':age_years3, 'Months':age_months3, 'Days':age_days3},
+                {'Name': "Jannah",'Years':age_years4, 'Months':age_months4, 'Days':age_days4},
+                {'Name': "Sarah",'Years':age_years5, 'Months':age_months5, 'Days':age_days5},
                 ]
         df = pd.DataFrame.from_dict(data)
         #df.index = range(1, len(df) + 1)  # Set index to start from 1
